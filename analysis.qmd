@@ -1,0 +1,45 @@
+---
+title: "Education and Political Approval"
+author: "Alec Rogers"
+format: html
+execute: 
+  echo: false
+---
+
+
+```{r}
+#| message: false
+library(tidyverse)
+library(primer.data)
+
+```
+
+Political ideology relates to presidential approval. We use 2020 data from the CES survey to explore this relationship among American voters.
+
+
+```{r}
+# create the data set
+x <- ces |>
+filter(year == 2020) |>
+dplyr::select(approval, education, ideology) |>
+drop_na() |>
+slice_sample(n = 2000)
+
+```
+
+
+```{r}
+x |>
+  ggplot(aes(x = ideology, fill = approval)) +
+  geom_bar() +
+  labs(
+    title = "Approval by Political Ideology",
+    subtitle = "Distribution of  presidential approval across ideological groups in 2020",
+    x = "Ideology",
+    y = "Count",
+    fill = "Approval",
+    caption = "Source: ces dataset, 2020 responses"
+  )
+
+```
+
