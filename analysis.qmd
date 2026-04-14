@@ -14,7 +14,7 @@ library(primer.data)
 
 ```
 
-Political ideology relates to presidential approval. We use 2020 data from the CES survey to explore this relationship among American voters.
+Political ideology relates to presidential approval. We use 2020 data from the CES survey to explore this relationship among American voters.Since our data come from only 2020 and from a survey, applicability of our findings is limited to other time periods and populations that may not respond to political surveys.
 
 
 ```{r}
